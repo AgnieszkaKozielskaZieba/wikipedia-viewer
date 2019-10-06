@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Input from "./Input";
+import Results from "./Results";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			searchResults: []
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleSubmit(searchPhrase) {
+		let str = searchPhrase.replace(" ", "%20");
+		fetch(`https://en.wikipedia.org/w/api.php?origin=*&action=query&list=search&srsearch=${str}&format=json`)
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+				this.setState({ searchResults: data.query.search });
+			})
+			.catch(err => console.log(err));
+	}
+
+	render() {
+		// let results=this.state.map(r=>)
+		return (
+			<div className="App">
+				<a className="FeelingLucky" target="#" href="https://en.wikipedia.org/wiki/Special:Random">
+					Feeling lucky :)
+				</a>
+				or click icon to search:
+				<Input handleSubmit={this.handleSubmit} />
+				<Results results={this.state.searchResults} />
+			</div>
+		);
+	}
 }
 
 export default App;

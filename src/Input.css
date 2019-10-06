@@ -1,0 +1,89 @@
+.icon {
+  margin: 30px auto;
+  position: relative;
+}
+
+input {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgb(50, 150, 200);
+  border-radius: 50px;
+  transition: 0.3s ease 0.6s;
+  padding-left: 0px;
+}
+
+.handle {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 30px;
+  height: 4px;
+  background-color: rgb(50, 150, 200);
+  transform-origin: center left;
+  transform: translateY(25px) rotate(45deg) translateX(30px);
+  transition: width 0.3s ease 0.9s;
+}
+
+.closeButton {
+  /*display: none;*/
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% + 160px);
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+.close {
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 1px);
+  background-color: rgb(50, 150, 200);
+  width: 30px;
+  height: 2px;
+  transform-origin: center;
+  /*transform: scaleX(0);*/
+}
+
+.close--first {
+  transform: rotate(45deg) scaleX(0);
+  transition: 0.3s ease 0s;
+}
+
+.close--second {
+  transform: rotate(-45deg) scaleX(0);
+  transition: 0.3s ease 0.3s;
+}
+
+.close--first.clicked {
+  transform: rotate(45deg) scaleX(1);
+  transition: 0.3s ease 0.6s;
+}
+
+.close--second.clicked {
+  transform: rotate(-45deg) scaleX(1);
+  transition: 0.3s ease 0.9s;
+}
+
+.closeButton.clicked {
+  display: inline-block;
+}
+.close.clicked {
+  /*width: 30px;*/
+}
+
+.handle.clicked {
+  width: 0px;
+  transition: 0.3s ease 0s;
+}
+
+input.clicked {
+  width: 400px;
+  transition: 0.3s ease 0.3s;
+  padding-left: 20px;
+}
+*:focus {
+  outline: none;
+}

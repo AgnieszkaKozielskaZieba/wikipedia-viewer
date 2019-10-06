@@ -20,3 +20,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+.FeelingLucky {
+  display: block;
+  margin: 30px auto;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: 4px solid rgb(50, 150, 200);
+  border-radius: 15px;
+  width: 200px;
+  padding: 15px;
+}
