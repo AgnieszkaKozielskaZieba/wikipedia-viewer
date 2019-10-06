@@ -7,7 +7,7 @@ class ResultCard extends Component {
 		let { pageid, title, snippet } = this.props.result;
 		let snippetDisplay = <p dangerouslySetInnerHTML={{ __html: snippet }}></p>;
 		return (
-			<a className="ResultCard" href={link + pageid} target="#">
+			<a className="ResultCard" href={link + pageid} target="_blank">
 				<h3>{title}</h3>
 				{snippetDisplay}
 			</a>

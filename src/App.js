@@ -27,7 +27,7 @@ class App extends Component {
 		// let results=this.state.map(r=>)
 		return (
 			<div className="App">
-				<a className="FeelingLucky" target="#" href="https://en.wikipedia.org/wiki/Special:Random">
+				<a className="FeelingLucky" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">
 					Feeling lucky :)
 				</a>
 				or click icon to search:
