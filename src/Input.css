@@ -57,29 +57,29 @@ input {
   transition: 0.3s ease 0.3s;
 }
 
-.close--first.clicked {
+.clicked .close--first {
   transform: rotate(45deg) scaleX(1);
   transition: 0.3s ease 0.6s;
 }
 
-.close--second.clicked {
+.clicked .close--second {
   transform: rotate(-45deg) scaleX(1);
   transition: 0.3s ease 0.9s;
 }
 
-.closeButton.clicked {
+.clicked .closeButton {
   display: inline-block;
 }
-.close.clicked {
+.clicked .close {
   /*width: 30px;*/
 }
 
-.handle.clicked {
+.clicked .handle {
   width: 0px;
   transition: 0.3s ease 0s;
 }
 
-input.clicked {
+.clicked input {
   width: 400px;
   transition: 0.3s ease 0.3s;
   padding-left: 20px;

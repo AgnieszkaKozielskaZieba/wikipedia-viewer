@@ -5,7 +5,8 @@ class Input extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchPhrase: ""
+			searchPhrase: "",
+      clicked: false
 		};
 		this.addClickedClass = this.addClickedClass.bind(this);
 		this.removeClickedClass = this.removeClickedClass.bind(this);
@@ -28,23 +29,15 @@ class Input extends Component {
 	}
 
 	addClickedClass() {
-		let icon = document.querySelector(".icon");
-		let elements = icon.querySelectorAll("*");
-		elements.forEach(el => {
-			el.classList.add("clicked");
-		});
+		this.setState({ clicked: true });
 	}
 	removeClickedClass() {
-		this.setState({ searchPhrase: "" });
-		let icon = document.querySelector(".icon");
-		let elements = icon.querySelectorAll("*");
-		elements.forEach(el => {
-			el.classList.remove("clicked");
-		});
+		this.setState({ searchPhrase: "", clicked: false });
 	}
 	render() {
+		const { clicked } = this.state;
 		return (
-			<div className="icon">
+			<div className={`icon ${clicked ? 'clicked' : ''}`}>
 				<form onSubmit={this.onSubmit}>
 					<input onClick={this.addClickedClass} onChange={this.onChange} type="text" value={this.state.searchPhrase} />
 				</form>
